@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../providers/auth-service'
+import { AuthService } from '../../providers/auth-service';
 import { NavController, App, LoadingController, ToastController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 
@@ -20,16 +20,8 @@ export class HomePage {
 
   logout() {
     this.authService.logout();
-      let nav = this.app.getRootNav();
-      nav.setRoot(LoginPage);
-    /*.then((result) => {
-      this.loading.dismiss();
-      let nav = this.app.getRootNav();
-      nav.setRoot(LoginPage);
-    }, (err) => {
-      this.loading.dismiss();
-      this.presentToast(err);
-    });*/
+    let nav = this.app.getRootNav();
+    nav.setRoot(LoginPage);
   }
 
 }
