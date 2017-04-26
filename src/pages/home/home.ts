@@ -20,7 +20,6 @@ export class HomePage {
 
   logout() {
     this.authService.logout();
-            let headers = new Headers();
       let nav = this.app.getRootNav();
       nav.setRoot(LoginPage);
     /*.then((result) => {
@@ -31,29 +30,6 @@ export class HomePage {
       this.loading.dismiss();
       this.presentToast(err);
     });*/
-  }
-
-  showLoader(){
-    this.loading = this.loadingCtrl.create({
-        content: 'Autenticando...'
-    });
-
-    this.loading.present();
-  }
-
-  presentToast(msg) {
-    let toast = this.toastCtrl.create({
-      message: msg,
-      duration: 3000,
-      position: 'bottom',
-      dismissOnPageChange: true
-    });
-
-    toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
-    });
-
-    toast.present();
   }
 
 }
